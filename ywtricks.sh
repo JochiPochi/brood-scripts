@@ -78,6 +78,11 @@ tar -jxvf archive_name.tar.bz2 -C /tmp/extract_here/
 
 tar xvfJ filename.tar.xz
 
+### Gunzip and DD
+
+gunzip -c DPA-128G-v1.0.2.img.gz | sudo dd of=/dev/mmcblk0 bs=4M && sync
+
+sudo dd if=/dev/mmcblk0 conv=sync,noerror bs=4M | gzip -c  > DPA-128G-v1.0.3.img.gz
 
 ### Bitbake recipe example
 
@@ -119,3 +124,20 @@ lsb_release -r | awk '{print $2}'
 
 #Install SSH Key on server
 ssh-copy-id -i ~/.ssh/id_rsa.pub remote-host
+
+#HDD utilization
+df -H
+
+#Install deb package manually
+sudo dpkg -i /Downloads/...
+sudo apt-get install -f
+
+#Check SO dependencies:
+dpkg -S nameofso
+
+#Unlock a machine through ssh
+DISPLAY=:0 gnome-screensaver-command -d
+
+#Git Tricks
+git config --global user.name "JochiPochi"
+git config --global user.email john.aleman@cyphywork.com
