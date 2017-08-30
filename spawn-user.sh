@@ -9,7 +9,11 @@ cp ./i3/.i3status.conf ~/
 cp ./.gitcolors.sh ~/
 cp ./ywtricks.txt ~/
 mkdir -p ~/.vim/plugin
-echo "source ~/.gitcolors" >> ~/.bashrc
-
+echo "source ~/.gitcolors.sh" >> ~/.bashrc
 
 gsettings set org.gnome.desktop.background show-desktop-icons false
+
+
+#Settings
+git config --global user.email "john.aleman@cyphyworks.com"
+git config --global user.name "JochiPochi"
