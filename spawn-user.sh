@@ -9,6 +9,7 @@ cp ./i3/.i3status.conf ~/
 cp ./.gitcolors.sh ~/
 cp ./ywtricks.txt ~/
 mkdir -p ~/.vim/plugin
+cp ./vim/Crystallite.vim ~/.vim/plugin/
 echo "source ~/.gitcolors.sh" >> ~/.bashrc
 
 gsettings set org.gnome.desktop.background show-desktop-icons false
