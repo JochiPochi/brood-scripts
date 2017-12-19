@@ -140,4 +140,21 @@ DISPLAY=:0 gnome-screensaver-command -d
 
 #Git Tricks
 git config --global user.name "JochiPochi"
-git config --global user.email john.aleman@cyphywork.com
+git config --global user.email john.aleman@cyphyworks.com
+
+#Ubuntu scaling factor
+sudo vi /usr/share/glib-2.0/schemas/org.gnome.desktop.interface.gschema.xml
+#Change the default value to 2 (or your desired scale factor):
+#<key name="scaling-factor" type="u">
+#<default>2</default>
+sudo glib-compile-schemas /usr/share/glib-2.0/schemas
+
+#Exploring kernel logs
+journalctl -t kernel
+
+#Exporting to clipboard
+pwd | xsel -ib
+
+#Creating symbolic links
+ ln -s source_file myfile
+
