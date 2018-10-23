@@ -4,6 +4,10 @@
 mkdir ~/.i3
 ln -s  ./i3/i3status.conf ~/.i3status.conf 
 cp ./.gitcolors.sh ~/
+
+mkdir ~/.config/terminator
+cp terminator/config ~/.config/terminator/config
+
 ln -s ./ywtricks.txt ~/
 mkdir -p ~/.vim/plugin
 cp ./vim/Crystallite.vim ~/.vim/plugin/
@@ -16,7 +20,7 @@ git config --global user.email "aleman@mit.edu"
 git config --global user.name "JochiPochi"
 
 #User level Dev Tools
-PYCHARM_VERSION=2017.2.2
+PYCHARM_VERSION=2018.2.4
 cd ~/
 mkdir bin
 wget https://download.jetbrains.com/python/pycharm-community-$PYCHARM_VERSION.tar.gz
