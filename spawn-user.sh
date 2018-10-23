@@ -2,12 +2,9 @@
 
 #This portion of the scropt should be run as a user
 mkdir ~/.i3
-cp ./i3/.fehbg ~/.i3/
-cp ./i3/wallpz.jpg ~/.i3/
-cp ./i3/config ~/.i3/
-cp ./i3/.i3status.conf ~/
+ln -s  ./i3/i3status.conf ~/.i3status.conf 
 cp ./.gitcolors.sh ~/
-cp ./ywtricks.txt ~/
+ln -s ./ywtricks.txt ~/
 mkdir -p ~/.vim/plugin
 cp ./vim/Crystallite.vim ~/.vim/plugin/
 echo "source ~/.gitcolors.sh" >> ~/.bashrc
@@ -15,7 +12,7 @@ echo "source ~/.gitcolors.sh" >> ~/.bashrc
 gsettings set org.gnome.desktop.background show-desktop-icons false
 
 #Settings
-git config --global user.email "john.aleman@cyphyworks.com"
+git config --global user.email "aleman@mit.edu"
 git config --global user.name "JochiPochi"
 
 #User level Dev Tools
