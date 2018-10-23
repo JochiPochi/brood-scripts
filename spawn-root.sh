@@ -23,7 +23,7 @@ gsettings set org.gnome.desktop.background show-desktop-icons false
 apt-get -y install gitk git-gui
 
 #Install oher useful dev apps
-apt-get install -y vim ssh synaptic tree baobab tmux gparted
+apt-get install -y vim ssh synaptic tree baobab tmux gparted htop meld
 
 #exFAT support
 apt-get install exfat-fuse exfat-utils
@@ -45,9 +45,12 @@ apt-get update
 apt-get -y install ansible
 
 #Install slack
-export SLACK_VERSION=2.7.1
+export SLACK_VERSION=3.3.3
+apt-get -y install libappindicator1 libindicator7
 wget https://downloads.slack-edge.com/linux_releases/slack-desktop-${SLACK_VERSION}-amd64.deb
 dpkg -i slack-desktop-${SLACK_VERSION}-amd64.deb
 rm slack-desktop-${SLACK_VERSION}-amd64.deb
 
+#Replace terminal
+apt-get -y install terminator
 
