@@ -36,11 +36,13 @@ git push REMOTE --mirror
 
 #Tmux
 #Start session
-tmux
+tmux -s john -t mike
 #Disconnect
 Ctrl+B  D
 #Reconnect
 tmux attach
+#Split Windows
+Ctrl+B% and "" split window
 
 #i3 Magic
 Reorganize windows
@@ -157,4 +159,16 @@ pwd | xsel -ib
 
 #Creating symbolic links
  ln -s source_file myfile
+
+#Find out what driver a device is using
+sudo lspci
+find /sys | grep drivers.*02:00
+
+#Integrate meld into git
+git config --global diff.tool meld
+git difftool master..devel
+git difftool -d ABC
+
+# Do X forwarding on a headless server
+sudo apt-get install xauth
 
