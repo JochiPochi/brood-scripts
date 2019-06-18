@@ -21,6 +21,8 @@ find FOLDER_ADDRESS -name "*something*"
 
 grep -rnw './' -e "pattern"
 
+grep -riIn "pattern"
+
 grep -rl 'string_to_find' ./ | xargs sed -i 's:string_to_replace:string_to_replace_with:g'
 
 #Going to previous folder on shell
@@ -171,4 +173,14 @@ git difftool -d ABC
 
 # Do X forwarding on a headless server
 sudo apt-get install xauth
+
+#DD disks
+#Make Image
+dd if=/dev/sda conv=sync,noerror bs=64K | gzip -c  > /path/to/backup.img.gz
+dd if=/dev/sda of=/path/to/backup.img bs=64K conv=noerror,sync status=progress 
+#Restore Image
+gunzip -c /path/to/backup.img.gz | dd of=/dev/sda status=progress
+dd if=/path/to/backup.img of=/dev/sda bs=64K conv=noerror,sync status=progress
+#Clone disks
+dd if=/dev/sdc of=/dev/sdd bs=64K conv=noerror,sync
 
