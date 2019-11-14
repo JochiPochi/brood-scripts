@@ -2,6 +2,7 @@
 
 #This portion of the scropt should be run as a user
 mkdir ~/.i3
+cp -r i3/*  ~/.i3
 ln -s  $PWD/i3/i3status.conf ~/.i3status.conf 
 cp ./.gitcolors.sh ~/
 

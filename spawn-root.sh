@@ -4,20 +4,20 @@
 
 
 #Install i3
-/usr/lib/apt/apt-helper download-file http://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2018.01.30_all.deb keyring.deb SHA256:baa43dbbd7232ea2b5444cae238d53bebb9d34601cc000e82f11111b1889078a
+/usr/lib/apt/apt-helper download-file http://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2019.02.01_all.deb keyring.deb SHA256:176af52de1a976f103f9809920d80d02411ac5e763f695327de9fa6aff23f416
 dpkg -i ./keyring.deb
 echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" >> /etc/apt/sources.list.d/sur5r-i3.list
-apt-get update
-apt-get install -y i3
+apt update
+apt install i3
 
-#Install Build tools
+apt-get install -y vim ssh synaptic tree baobab tmux gparted htop meld#Install Build tools
 apt-get install -y build-essential
 
 #Install i3 musts
 apt-get install -y feh arandr xbacklight
 
 # The following command will disable the desktop (we won't need it with i3!)
-gsettings set org.gnome.desktop.background show-desktop-icons false
+tgsettings set org.gnome.desktop.background show-desktop-icons false
 
 #Install git stuff
 apt-get -y install gitk git-gui
@@ -32,11 +32,15 @@ apt-get install exfat-fuse exfat-utils
 apt-get install -y cmatrix
 
 #Install VM stuff
-echo "deb http://download.virtualbox.org/virtualbox/debian xenial contrib" >> /etc/apt/sources.list
+echo "deb http://download.virtualbox.org/virtualbox/debian bionic contrib" >> /etc/apt/sources.list
 wget https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
 apt-get update
-apt-get install -y virtualbox-5.1
+apt-get install -y virtualbox-6.0
 apt-get install -y dkms
+
+#Install Vagrant
+wget https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb
+sudo dpkg -i vagrant_2.2.5_x86_64.deb
 
 #Install Ansible
 apt-get -y install software-properties-common
@@ -45,7 +49,7 @@ apt-get update
 apt-get -y install ansible
 
 #Install slack
-export SLACK_VERSION=3.3.3
+export SLACK_VERSION=4.0.1
 apt-get -y install libappindicator1 libindicator7
 wget https://downloads.slack-edge.com/linux_releases/slack-desktop-${SLACK_VERSION}-amd64.deb
 dpkg -i slack-desktop-${SLACK_VERSION}-amd64.deb
