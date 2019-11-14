@@ -147,6 +147,10 @@ git config --global user.name "JochiPochi"
 git config --global user.email john.aleman@cyphyworks.com
 
 #Ubuntu scaling factor
+#Also check https://wiki.archlinux.org/index.php/HiDPI
+touch .Xresources
+echo "Xft.dpi: 100" > .Xresources
+#For the logon screen
 sudo vi /usr/share/glib-2.0/schemas/org.gnome.desktop.interface.gschema.xml
 #Change the default value to 2 (or your desired scale factor):
 #<key name="scaling-factor" type="u">
@@ -184,3 +188,9 @@ dd if=/path/to/backup.img of=/dev/sda bs=64K conv=noerror,sync status=progress
 #Clone disks
 dd if=/dev/sdc of=/dev/sdd bs=64K conv=noerror,sync
 
+#Copy folder and preserve all permissions
+rsync -av --progress /foldera /folderb
+
+#Ubuntu18 CUPS issue
+sudo systemctl stop cups-browsed.service
+sudo systemctl disable cups-browsed.service
