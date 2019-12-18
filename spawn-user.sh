@@ -19,6 +19,7 @@ gsettings set org.gnome.desktop.background show-desktop-icons false
 #Settings
 git config --global user.email "aleman@mit.edu"
 git config --global user.name "JochiPochi"
+git config --global core.editor "vim"
 
 #User level Dev Tools
 PYCHARM_VERSION=2018.2.4
