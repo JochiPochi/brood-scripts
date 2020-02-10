@@ -17,7 +17,7 @@ apt-get install -y build-essential
 apt-get install -y feh arandr xbacklight
 
 # The following command will disable the desktop (we won't need it with i3!)
-tgsettings set org.gnome.desktop.background show-desktop-icons false
+gsettings set org.gnome.desktop.background show-desktop-icons false
 
 #Install git stuff
 apt-get -y install gitk git-gui
@@ -49,12 +49,13 @@ apt-get update
 apt-get -y install ansible
 
 #Install slack
-export SLACK_VERSION=4.0.1
-apt-get -y install libappindicator1 libindicator7
-wget https://downloads.slack-edge.com/linux_releases/slack-desktop-${SLACK_VERSION}-amd64.deb
-dpkg -i slack-desktop-${SLACK_VERSION}-amd64.deb
-rm slack-desktop-${SLACK_VERSION}-amd64.deb
+snap install slack --classic
+
+#User level Dev Tools
+sudo snap install pycharm-community --classic
 
 #Replace terminal
 apt-get -y install terminator
 
+#Install compton, allows transparency
+apt-get -y install compton
