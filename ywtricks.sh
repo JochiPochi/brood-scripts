@@ -82,6 +82,14 @@ tar -jxvf archive_name.tar.bz2 -C /tmp/extract_here/
 
 tar xvfJ filename.tar.xz
 
+### Tar preserving ownership
+
+tar -p 
+
+### Copy and preserve ownership
+
+cp -a
+
 ### Gunzip and DD
 
 gunzip -c DPA-128G-v1.0.2.img.gz | sudo dd of=/dev/mmcblk0 bs=4M && sync
@@ -194,3 +202,20 @@ rsync -av --progress /foldera /folderb
 #Ubuntu18 CUPS issue
 sudo systemctl stop cups-browsed.service
 sudo systemctl disable cups-browsed.service
+
+#Enable tapping on touchpad
+sudo mkdir -p /etc/X11/xorg.conf.d && sudo tee <<'EOF' /etc/X11/xorg.conf.d/90-touchpad.conf 1> /dev/null
+Section "InputClass"
+        Identifier "touchpad"
+        MatchIsTouchpad "on"
+        Driver "libinput"
+        Option "Tapping" "on"
+EndSection
+
+EOF
+
+#LTE modem manager
+sudo mmcli -m 0 #Display info
+sudo mmcli -L #List all modems
+sudo mmcli -i 0 #Info on the sim card
+
