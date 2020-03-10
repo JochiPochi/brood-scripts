@@ -29,6 +29,9 @@ font pango:monospace 8
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# set window border
+default_border pixel 2
+
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
@@ -158,8 +161,14 @@ bar {
 # Start nm-applet with i3bar
 exec --no-startup-id nm-applet
 
-#Change background
+# Start volume control
+exec --no-startup-id volumeicon
+
+# Change background
 exec ~/.i3/fehbg
+
+# start compton
+exec --no-startup-id compton
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ #increase sound volume
