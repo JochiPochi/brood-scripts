@@ -219,3 +219,5 @@ sudo mmcli -m 0 #Display info
 sudo mmcli -L #List all modems
 sudo mmcli -i 0 #Info on the sim card
 
+#i3 7 GNOME
+env XDG_CURRENT_DESKTOP=GNOME gnome-control-center
