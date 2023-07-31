@@ -221,3 +221,7 @@ sudo mmcli -i 0 #Info on the sim card
 
 #i3 7 GNOME
 env XDG_CURRENT_DESKTOP=GNOME gnome-control-center
+
+#Bluetooth notes
+blueman-manager
+
